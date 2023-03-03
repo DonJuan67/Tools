@@ -1,0 +1,279 @@
+{
+	"LoadoutName": {
+        "ProperName": "Name of the file",
+        "ValueFormat": "String",
+        "SubType": "",
+        "Default": "",
+        "ArrValues": "",
+        "Constraints": ""
+    },
+    "VictoryConditionHeader": {
+        "ProperName": "Victory Conditions",
+        "ValueFormat": "Header",
+        "SubType": "Main",
+        "Default": "",
+        "ArrValues": "",
+        "Constraints": ""
+    },
+    "TimeLimit": {
+        "ProperName": "Time limit",
+        "ValueFormat": "Int",
+        "SubType": "",
+        "Default": "0",
+        "ArrValues": "",
+        "Constraints": ""
+    },
+    "LevelSelected": {
+        "ProperName": "Level selected",
+        "ValueFormat": "String",
+        "SubType": "",
+        "Default": "Tower",
+        "ArrValues": "",
+        "Constraints": ""
+    },
+    "MapSize": {
+        "ProperName": "Map size",
+        "ValueFormat": "Vector2",
+        "SubType": "",
+        "Default": "40,25",
+        "ArrValues": "",
+        "Constraints": ""
+    },
+    "GravitationalConstant": {
+        "ProperName": "Gravitational constant",
+        "ValueFormat": "Float",
+        "SubType": "Slider",
+        "Default": "2",
+        "ArrValues": "",
+        "Constraints": "0,10"
+    },
+    "BlockHeader": {
+        "ProperName": "Blocks",
+        "ValueFormat": "Header",
+        "SubType": "Main",
+        "Default": "",
+        "ArrValues": "",
+        "Constraints": ""
+    },
+    "BlockSize": {
+        "ProperName": "Block size",
+        "ValueFormat": "Vector2",
+        "SubType": "",
+        "Default": "2,5",
+        "ArrValues": "",
+        "Constraints": ""
+    },
+    "BlockStartNum": {
+        "ProperName": "Initial block count",
+        "ValueFormat": "Int",
+        "SubType": "Slider",
+        "Default": "0",
+        "ArrValues": "",
+        "Constraints": "0,50"
+    },
+    "BlockSpawnRate": {
+        "ProperName": "Block spawn rate",
+        "ValueFormat": "Float",
+        "SubType": "Slider",
+        "Default": "5",
+        "ArrValues": "",
+        "Constraints": ".1,60"
+    },
+    "BlockDensity": {
+        "ProperName": "Block density",
+        "ValueFormat": "Vector2",
+        "SubType": "",
+        "Default": "0.4,2",
+        "ArrValues": "",
+        "Constraints": ""
+    },
+    "BlockNegativeMass": {
+        "ProperName": "Block negative mass",
+        "ValueFormat": "Bool",
+        "SubType": "",
+        "Default": "True",
+        "ArrValues": "",
+        "Constraints": ""
+    },
+    "BlockLinearDrag": {
+        "ProperName": "Block Linear Drag",
+        "ValueFormat": "Float",
+        "SubType": "Slider",
+        "Default": ".7",
+        "ArrValues": "",
+        "Constraints": "0,1"
+    },
+    "BlockFriction": {
+        "ProperName": "Block Friction",
+        "ValueFormat": "Float",
+        "SubType": "Slider",
+        "Default": ".3",
+        "ArrValues": "",
+        "Constraints": "0,1"
+    },
+    "BlockBounce": {
+        "ProperName": "Block Bounciness",
+        "ValueFormat": "Float",
+        "SubType": "Slider",
+        "Default": "0",
+        "ArrValues": "",
+        "Constraints": "0,1"
+    },
+    "GravityWellHeader": {
+        "ProperName": "Gravity Wells",
+        "ValueFormat": "Header",
+        "SubType": "Main",
+        "Default": "",
+        "ArrValues": "",
+        "Constraints": ""
+    },
+    "GravityWellSize": {
+        "ProperName": "Gravity well size",
+        "ValueFormat": "Vector2",
+        "SubType": "",
+        "Default": "2,5",
+        "ArrValues": "",
+        "Constraints": ""
+    },
+    "GravityWellCount": {
+        "ProperName": "Time limit",
+        "ValueFormat": "Int",
+        "SubType": "Slider",
+        "Default": "0",
+        "ArrValues": "",
+        "Constraints": "0,20"
+    },
+    "GravityWellDensity": {
+        "ProperName": "Gravity well density",
+        "ValueFormat": "Vector2",
+        "SubType": "",
+        "Default": "1,2",
+        "ArrValues": "",
+        "Constraints": ""
+    },
+    "GravityWellNegativeMass": {
+        "ProperName": "Gravity well negative mass",
+        "ValueFormat": "Bool",
+        "SubType": "",
+        "Default": "True",
+        "ArrValues": "",
+        "Constraints": ""
+    },
+    "Grapple_Header": 
+    {
+        "ProperName": "Grapple",
+        "ValueFormat": "Header",
+        "SubType": "Main",
+        "Default": "",
+        "ArrValues": "",
+        "Constraints": ""
+    },
+	"Grapple_Length":
+	{
+		"ProperName":"Grapple rope length",
+		"ValueFormat":"Float",
+		"SubType": "Slider",
+		"Default": "15",
+		"ArrValues":"",
+		"Constraints":"6,25"
+	},
+    "Grapple_BreakStrength": {
+        "ProperName": "Grapple break strength",
+        "ValueFormat": "Float",
+        "SubType": "",
+        "Default": "400",
+        "ArrValues": "",
+        "Constraints": ""
+    },
+    "GridHeader":
+	{
+		"ProperName":"Grid Setup",
+		"ValueFormat":"Header",
+		"SubType": "Main",
+		"Default": "",
+		"ArrValues":"",
+		"Constraints":""
+	},
+	"Grid_BatchSpawn":
+	{
+		"ProperName":"Batch Spawn",
+		"ValueFormat":"Int",
+		"SubType": "",
+		"Default": "2",
+		"ArrValues":"",
+		"Constraints":""
+	},
+	"Grid_LimitMult":
+	{
+		"ProperName":"Limit Multiplier",
+		"ValueFormat":"Bool",
+		"SubType": "",
+		"Default": "True",
+		"ArrValues":"",
+		"Constraints":""
+	},
+	"Grid_CurveMass":
+	{
+		"ProperName":"Curve Mass",
+		"ValueFormat":"Bool",
+		"SubType": "",
+		"Default": "True",
+		"ArrValues":"",
+		"Constraints":""
+	},
+	"Grid_MagicNumber":
+	{
+		"ProperName":"Amount of Magic",
+		"ValueFormat":"Float",
+		"SubType": "",
+		"Default": "3",
+		"ArrValues":"",
+		"Constraints":""
+	},
+	"Grid_StretchMult":
+	{
+		"ProperName":"Stretch Multiplier",
+		"ValueFormat":"Float",
+		"SubType": "",
+		"Default": ".3",
+		"ArrValues":"",
+		"Constraints":""
+	},
+	"Grid_MassCurveStretch":
+	{
+		"ProperName":"Mass Curve Multiplier",
+		"ValueFormat":"Float",
+		"SubType": "",
+		"Default": "3",
+		"ArrValues":"",
+		"Constraints":""
+	},
+	"Grid_MassCurveAss":
+	{
+		"ProperName":"Mass Curve Asymptote",
+		"ValueFormat":"Float",
+		"SubType": "",
+		"Default": "65",
+		"ArrValues":"",
+		"Constraints":""
+	},
+	"Grid_POW":
+	{
+		"ProperName":"Distance POW",
+		"ValueFormat":"Float",
+		"SubType": "",
+		"Default": "2.5",
+		"ArrValues":"",
+		"Constraints":""
+	}
+}
+
+
+
+
+
+			
+			
+			
+			
+			

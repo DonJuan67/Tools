@@ -1,0 +1,174 @@
+{
+  "cardName": "GrottoTemple",
+  "versionNumber": 2,
+  "itemSetMode": 0,
+  "winConditionGameData": {
+    "winConditionType": "HeistWC, Assembly-CSharp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+    "winConditionCommonRules": {
+      "startLives": 20,
+      "lifeMode": 1,
+      "numberOfTeams": 2,
+      "overrideAllPlayerSpawnZones": false,
+      "IsTeamGame": true
+    },
+    "extendedWinConditionsRule": {
+      "pointsToWin": {
+        "fieldName": "pointsToWin",
+        "value": 1,
+        "type": "System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+      }
+    }
+  },
+  "levelGameData": {
+    "levelName": "GrottoTemple",
+    "extendedLevelRules": {},
+    "disableSmallestWallFall": false,
+    "defaultMusic": "Rock"
+  },
+  "playerLoadoutGameData": {
+    "allowedCharacters": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "jetpackActive": true,
+    "healingDisabled": false,
+    "grappleHook": false,
+    "playerLoadoutRows": [
+      {
+        "selectXMany": 1,
+        "itemNames": [
+          "PowerFist",
+          "GravityHammer"
+        ]
+      },
+      {
+        "selectXMany": 1,
+        "itemNames": [
+          "PhathomMine",
+          "DazeGasBomb",
+          "BouncyGrenade",
+          "Claymore",
+          "Cryoplasmer",
+          "BottleBomb"
+        ]
+      },
+      {
+        "selectXMany": 4,
+        "itemNames": [
+          "Bow",
+          "RocketLauncher",
+          "M1Garand",
+          "Shotgun"
+        ]
+      },
+      {
+        "selectXMany": 1,
+        "itemNames": [
+          "FragGrenade"
+        ]
+      },
+      {
+        "selectXMany": 3,
+        "itemNames": [
+          "Pickaxe",
+          "RocketLance",
+          "Dagger"
+        ]
+      }
+    ]
+  },
+  "generalItemSpawnGameData": {
+    "itemSpawnExplicitZoneData": [
+      {
+        "uniqueZoneIdentifier": 0,
+        "itemSelectionMode": 0,
+        "zoneSelectionMode": 0,
+        "timeBetweenSpawns": {
+          "x": 6.0,
+          "y": 6.0
+        },
+        "maxItemsInScenePerZone": 1,
+        "items": [
+          "Semtex",
+          "FragGrenade",
+          "GrenadeLauncher",
+          "IonicLaser",
+          "RocketLauncher",
+          "RocketLance"
+        ]
+      },
+      {
+        "uniqueZoneIdentifier": 2,
+        "itemSelectionMode": 0,
+        "zoneSelectionMode": 0,
+        "timeBetweenSpawns": {
+          "x": 8.0,
+          "y": 8.0
+        },
+        "maxItemsInScenePerZone": 1,
+        "items": [
+          "IllegalSpaceBeehive",
+          "BottleBomb",
+          "Shockgun",
+          "ElephantGun",
+          "GaussCannon",
+          "ElectricBow"
+        ]
+      },
+      {
+        "uniqueZoneIdentifier": 2,
+        "itemSelectionMode": 0,
+        "zoneSelectionMode": 0,
+        "timeBetweenSpawns": {
+          "x": 8.0,
+          "y": 8.0
+        },
+        "maxItemsInScenePerZone": 1,
+        "items": [
+          "IonicLaser",
+          "GaussCannon",
+          "RocketHammer",
+          "RepulseGauntlet",
+          "Sparkler",
+          "Uzi"
+        ]
+      }
+    ]
+  },
+  "toggleablesGameData": {
+    "activeToggeables": {}
+  },
+  "descriptionGameData": {
+    "cardImgPath": "GrottoTemple",
+    "cardDescription": "A heist-off! Be the first to navigate the dangerous traps, destroy the obstacles, and grab the treasure. The first to bring it back home wins.",
+    "roundIntroText": "Touch the idol to pick it up, and try to carry it back to the zone near your spawn.\nEach team has a total of 20 lives to use.\nIf you die while carrying the idol, you drop it where you fall, where it can be picked up by friend or foe.\nThe rock wall at the top of the level can be crumbled to create a shortcut between the two teams' spawn areas.\nThis is considered a hard map. It's possible no one wins.\nIn-house playtest - sound effects, UX and other features still in progess.",
+    "metaTags": [
+      "TreasureHunt",
+      "Challenge",
+      "Versus"
+    ]
+  },
+  "debugGameData": {
+    "aimer": true,
+    "slowmo": true
+  },
+  "categoryTags": {
+    "categoryTags": [
+      "Versus",
+      "Treasure Hunt"
+    ],
+    "isPlaytestCategory": true
+  },
+  "isLevelSetupEditorLaunched": false,
+  "LocalCardName": "Grotto Temple",
+  "LocalLevelName": "Grotto Temple",
+  "LocalCardObjective": "Touch the idol to pick it up, and try to carry it back to the zone near your spawn.\nEach team has a total of 20 lives to use.\nIf you die while carrying the idol, you drop it where you fall, where it can be picked up by friend or foe.\nThe rock wall at the top of the level can be crumbled to create a shortcut between the two teams' spawn areas.\nThis is considered a hard map. It's possible no one wins.\nIn-house playtest - sound effects, UX and other features still in progess."
+}

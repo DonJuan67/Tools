@@ -1,0 +1,26 @@
+Make an incredibly simple game
+Have it load and save during runtime using three different methods of serialization. JSON, XML, and Binary.
+Answer the bonus questions marked by Q. throughout the project for the final 9%
+
+Game:
+Bounded level
+Summon a bunch of random colored squares
+circles move randomly within a bounded level
+circles that touch squares will destroy the square and consume the color.
+
+Make is so you can save and load the level, keeping the positions and colors of all objects using JSON,XML and Binary
+
+PlayerPrefs:
+Make an editor window with two int fields
+	Number of Square
+	Number of Circles
+When the game loads, it creates that many
+
+Resources:
+PlayerPref: https://docs.unity3d.com/ScriptReference/PlayerPrefs.html
+Binary Formatter: https://unity3d.com/learn/tutorials/topics/scripting/persistence-saving-and-loading-data
+		  https://answers.unity.com/questions/1320236/what-is-binaryformatter-and-how-to-use-it-and-how.html
+XML: http://wiki.unity3d.com/index.php?title=Saving_and_Loading_Data:_XmlSerializer
+JSON: https://docs.unity3d.com/Manual/JSONSerialization.html
+      https://unity3d.com/learn/tutorials/topics/scripting/loading-game-data-json
+SimpleJSON: http://wiki.unity3d.com/index.php/SimpleJSON  (Instructions to install listed)

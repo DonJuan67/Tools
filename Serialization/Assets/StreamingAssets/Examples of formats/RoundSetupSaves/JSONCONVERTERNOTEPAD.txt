@@ -1,0 +1,8 @@
+How to download JSONCONVERTER for notepad++ so you can view the jsons in a readable format
+The save files will be in a format not very readable by people, but can be with this plugin to notepad++
+
+Step 1) Download:  https://sourceforge.net/projects/nppjsonviewer/files/latest/download
+Step 2) Place the .dll into Notepad++/Plugins folder   (For me: C:\Program Files (x86)\Notepad++\plugins)
+Step 3) Close and re-open notepad++
+Step 4)there might be a warning saying "incompatible version" or whatever, just say yes to remove, and some reason itll work and still be there
+Step 5) In notepad++, there is a Plugins tab, in there JSONVIEWER, with all the text selected (ctrl+a) select Format json, should show the json in proper way

@@ -1,0 +1,69 @@
+{
+	"Game":
+	[
+		"VictoryConditionHeader",
+		"Player_MaxLives",
+		"TimeLimit"
+	],
+    "Level": [
+        "LevelSelected",
+        "MapSize",
+        "GravitationalConstant",
+        "GridHeader",
+        "Grid_BatchSpawn",
+        "Grid_LimitMult",
+        "Grid_CurveMass",
+        "Grid_MagicNumber",
+        "Grid_StretchMult",
+        "Grid_MassCurveStretch",
+        "Grid_MassCurveAss",
+        "Grid_POW"
+    ],
+    "Player": 
+    [        
+    ],
+    "Blocks": 
+    [
+
+    ],
+    "Items": 
+    [
+        "Grapple_Header",
+        "Grapple_Length",
+        "Grapple_BreakStrength"
+    ],
+    "GravityLevel":
+	[
+		"BlockHeader",
+		"BlockSize",
+		"BlockStartNum",
+		"BlockSpawnRate",
+		"BlockDensity",
+		"BlockNegativeMass",
+		"BlockLinearDrag",
+		"BlockFriction",
+		"BlockBounce",
+		"GravityWellHeader",
+		"GravityWellSize",
+		"GravityWellCount",
+		"GravityWellDensity",
+		"GravityWellNegativeMass"		
+	],
+	"TowerLevel":
+	[
+		"BlockHeader",
+		"BlockSize",
+		"BlockSpawnRate",
+		"BlockDensity",
+		"BlockNegativeMass"
+	],
+	"PlanetLevel":
+	[
+		
+	]
+}
+
+
+
+
+

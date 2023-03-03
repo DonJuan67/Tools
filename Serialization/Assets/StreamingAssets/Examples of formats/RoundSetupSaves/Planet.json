@@ -1,0 +1,8 @@
+{
+	"LevelSelected": "Planet",
+	"BlockStartNum": "100",
+	"BlockSize": "0.75,2.25",
+	"MapSize":"40,40",	
+	"BlockSpawnRate":"100",
+	"BlockDensity":"0.5,2",	
+}

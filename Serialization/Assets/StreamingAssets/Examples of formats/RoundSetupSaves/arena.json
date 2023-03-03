@@ -1,0 +1,12 @@
+{
+	"GravityWellCount": "5",
+	"LevelSelected": "Tower",
+	"BlockStartNum": "10",
+	"BlockNegativeMass": "False",
+	"GravityWellNegativeMass":"True",
+  "MapSize": "70,30",
+  "BlockSize": "3,10", 
+  "BlockDensity": ".3,1.8",
+  "BlockSpawnRate": "5",
+  "Grapple_Length": "18"
+}

@@ -1,0 +1,40 @@
+{
+  "Map": "Tower",    
+  "PlayerControls":
+  {
+    "0":"0",
+	"1":"1"
+  },
+  "Blocks":  
+  {
+	"SizeRange":["2","10"],
+	"HasNegativeMass":"True",
+	"Density":["1","2"],
+	"Count":"20"
+  },  
+  "GravityWells":
+  {
+    "SizeRange":["2","10"],
+	"HasNegativeMass":"True",
+	"Density":["1","2"],
+	"Count":"20"
+  },
+  "DirectionalGravity": 
+  [
+    {
+	"IsPolarized":"True",
+	"DirVector":[0,-1],
+	"PointLocation":"Origin",
+	"DistanceFromPoint":2,
+	"Mass":5000	
+	}
+  ],  
+  "GravitionalConstant":2, 
+  "MapSizeX":"50",
+  "MapSizeY":"25"  
+}
+
+
+
+
+

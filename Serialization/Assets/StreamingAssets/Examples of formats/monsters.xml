@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<MonsterCollection xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <AMonsters>
+    <BMonster name="Beezlebub" hp="0" />
+    <BMonster name="Aphids" hp="0" />
+  </AMonsters>
+</MonsterCollection>
