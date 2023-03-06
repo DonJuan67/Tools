@@ -87,10 +87,10 @@ public static class ExtensionFuncs              //static required
 
     
     // 6. Make an extension function that runs a predicate on each element and returns if it is true for all elements
-    public static Predicate<T> TrueForAll<T>(this T[] arr, Predicate<T> predicate)
-    {
-        //bool result = false;
-        //result = (bool)predicate;
-        return predicate;
-    }
+    //public static Predicate<T> TrueForAll<T>(this T[] arr, params Expression<Func<T, bool>>[] predicates)
+    //{
+    //    //bool result = false;
+    //    //result = (bool)predicate;
+    //    return predicate;
+    //}
 }

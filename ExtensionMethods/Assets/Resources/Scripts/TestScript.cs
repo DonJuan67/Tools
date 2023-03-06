@@ -11,7 +11,7 @@ public class TestScript : MonoBehaviour
         Exercice3();
         Exercice4();
         Exercice5();
-        Exercice6();
+        //Exercice6();
     }
     private void FixedUpdate()
     {
@@ -72,10 +72,10 @@ public class TestScript : MonoBehaviour
         Debug.Log(result);
     }
 
-    void Exercice6()
-    {
-        Debug.Log("Exercice 6:");
-        int[] arrInt = new int[5] { 1, 2, 3, 4, 5 };
-        Debug.Log(arrInt.TrueForAll((c) => { return c > 0; }));
-    }
+    //void Exercice6()
+    //{
+    //    Debug.Log("Exercice 6:");
+    //    int[] arrInt = new int[5] { 1, 2, 3, 4, 5 };
+    //    Debug.Log(arrInt.TrueForAll((c) => { return c > 0; }));
+    //}
 }
