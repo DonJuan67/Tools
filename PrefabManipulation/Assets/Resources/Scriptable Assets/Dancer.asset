@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 111b733bf51eb4745b5f2b56a7e47784, type: 3}
   m_Name: Dancer
   m_EditorClassIdentifier: 
-  hp: 0
-  speed: 0
+  hp: 2
+  speed: 4

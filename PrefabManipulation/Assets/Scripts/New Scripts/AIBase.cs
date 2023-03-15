@@ -16,8 +16,7 @@ public class AIBase : MonoBehaviour
 
     public void Start()
     {
-        
-
+        aiStats = GameObject.Instantiate(aiStats);
     }
 
 

@@ -7,6 +7,10 @@ using System.Linq;
 
 public static class EnemiesGenerator
 {
+    static string prebabPath = "Assets/Resources/Prefabs";
+    static string oldAIScriptPath = "Assets/Scripts/Old Scripts";
+    static string newAIScriptPath = "Assets/Scripts/New Scripts/AITypes";
+
     [MenuItem("Helper Tool/Generate 20 Enemies")]
     public static void GenerateEnemies()
     {
@@ -14,23 +18,19 @@ public static class EnemiesGenerator
         Object[] sprites = Resources.LoadAll(spritePath, typeof(Sprite));
 
         List<MonoScript> scripts = new List<MonoScript>();
-        string scriptsPath = GetOldAIScripts(scripts);
+        GetAIScripts(scripts, oldAIScriptPath);
 
         if (sprites.Length == 0)
             Debug.Log("No sprites found in Resources/" + spritePath + "/ folder");
         else if (scripts.Count == 0)
-            Debug.Log("No Enemy Scripts found in " + scriptsPath + "/  folder");
+            Debug.Log("No Enemy Scripts found in " + oldAIScriptPath + "/  folder");
         else
         {
             List<string> fullNameList = new List<string>();
 
-
-            string prebabPath = "Assets/Resources/Prefabs";
-            if (!Directory.Exists(prebabPath))
-                AssetDatabase.CreateFolder("Assets/Resources", "Prefabs");
-
+            PrefabDirectoryPath();
             List<string> prefabNames = new List<string>();
-            Object[] prefabs = Resources.LoadAll("Prefabs", typeof(GameObject));
+            Object[] prefabs = GetPrefabs();
             for (int i = 0; i < prefabs.Length; i++)
             {
                 prefabNames.Add(prefabs[i].name);
@@ -46,6 +46,7 @@ public static class EnemiesGenerator
                     break;
 
                 fullNameList.Add(fullName);
+
                 //Creating enemy with componant
                 GameObject gameObject = new GameObject(fullName);
                 BoxCollider2D boxCollider = gameObject.AddComponent<BoxCollider2D>();
@@ -74,6 +75,77 @@ public static class EnemiesGenerator
         }
     }
 
+    [MenuItem("Helper Tool/Fix Prefab's AIScripts")]
+    public static void FixPrefabsAIScripts()
+    {
+        PrefabDirectoryPath();
+        Object[] prefabs = GetPrefabs();
+        List<GameObject> gameObjects = new List<GameObject>();
+
+        if (prefabs.Length != 0)
+        {
+            foreach (GameObject item in prefabs)
+            {
+                gameObjects.Add(item);
+            }
+
+            List<MonoScript> oldScripts = new List<MonoScript>();
+            GetAIScripts(oldScripts, oldAIScriptPath);
+            List<MonoScript> newScripts = new List<MonoScript>();
+            GetAIScripts(newScripts, newAIScriptPath);
+            string scriptableObjectsPath = "Scriptable Assets";
+            Object[] scriptableObjects = Resources.LoadAll(scriptableObjectsPath, typeof(ScriptableObject));
+
+            if (scriptableObjects.Length != 0)
+            {
+                for (int i = 0; i < gameObjects.Count; i++)
+                {
+                    for (int j = 0; j < oldScripts.Count; j++)
+                    {
+                        if (gameObjects[i].GetComponent(oldScripts[j].GetClass()))
+                        {
+                            Old_AIBase old_AIBase = (Old_AIBase)gameObjects[i].GetComponent(oldScripts[j].GetClass());
+                            for (int l = 0; l < newScripts.Count; l++)
+                            {
+                                if (oldScripts[j].name.Contains(newScripts[l].name))
+                                {
+                                    AIBase aIBase = (AIBase)gameObjects[i].AddComponent(newScripts[l].GetClass());
+                                    aIBase.enemyType = old_AIBase.enemyType;
+                                    aIBase.rb = old_AIBase.rb;
+                                    aIBase.coli = old_AIBase.coli;
+                                    aIBase.sr = old_AIBase.sr;
+                                    aIBase.aiStats = (AIStats)scriptableObjects[Random.Range(0, scriptableObjects.Length)];
+
+                                    GameObject.DestroyImmediate(gameObjects[i].GetComponent(oldScripts[j].GetClass()), true);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            else
+            {
+                Debug.Log("No AIStats(ScriptableObject) found in " + scriptableObjectsPath + " Folder");
+            }
+        }
+        else
+        {
+            Debug.Log("No Prefabs found in " + prebabPath + " Folder");
+        }
+        AssetDatabase.Refresh();
+    }
+
+    private static Object[] GetPrefabs()
+    {
+        return Resources.LoadAll("Prefabs", typeof(GameObject));
+    }
+
+    private static void PrefabDirectoryPath()
+    {
+        if (!Directory.Exists(prebabPath))
+            AssetDatabase.CreateFolder("Assets/Resources", "Prefabs");
+    }
+
     private static string GetRandomName(List<string> fullNameList, List<string> prefabNames, ref bool noNameAvailable)
     {
         string firstName;
@@ -99,12 +171,8 @@ public static class EnemiesGenerator
 
                 fullName = firstName + " " + lastName;
 
-
-                for (int i = 0; i < nameTriedList.Count; i++)
-                {
-                    if (nameTriedList[i] == fullName)
-                        nameAlredyTried = true;
-                }
+                if (nameTriedList.Contains(fullName))
+                    nameAlredyTried = true;
 
                 if (nbNameTried >= possibleCombination)
                 {
@@ -119,32 +187,23 @@ public static class EnemiesGenerator
                 Debug.Log("Max possible combination of name reach, Add names in RandomName.cs");
                 break;
             }
-            for (int j = 0; j < fullNameList.Count; j++)
+            if (fullNameList.Contains(fullName))
             {
-                if (fullNameList[j] == fullName)
-                {
-                    nameAlreadyExist = true;
-                    nameTriedList.Add(fullName);
-                    break;
-                }
+                nameAlreadyExist = true;
+                nameTriedList.Add(fullName);
             }
-            for (int i = 0; i < prefabNames.Count; i++)
+            if (prefabNames.Contains(fullName))
             {
-                if (prefabNames[i] == fullName)
-                {
-                    nameAlreadyExist = true;
-                    nameTriedList.Add(fullName);
-                    break;
-                }
+                nameAlreadyExist = true;
+                nameTriedList.Add(fullName);
             }
             nbLoops++;
         } while (nameAlreadyExist);
         return fullName;
     }
 
-    private static string GetOldAIScripts(List<MonoScript> scripts)
+    private static void GetAIScripts(List<MonoScript> scriptsListToUpdate, string scriptsPath)
     {
-        string scriptsPath = "Assets/Scripts/Old Scripts";
         DirectoryInfo dir = new DirectoryInfo(scriptsPath);
         FileInfo[] info = dir.GetFiles();
         for (int i = 0; i < info.Length; i++)
@@ -153,10 +212,8 @@ public static class EnemiesGenerator
             {
                 string s = scriptsPath + "/" + info[i].Name;
                 Object scriptTemp = AssetDatabase.LoadAssetAtPath(s, typeof(Object));
-                scripts.Add((MonoScript)scriptTemp);
+                scriptsListToUpdate.Add((MonoScript)scriptTemp);
             }
         }
-
-        return scriptsPath;
     }
 }
