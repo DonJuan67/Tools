@@ -29,7 +29,7 @@ namespace BankOfBitsAndBytes
                 Thread t = new Thread(ts);
                 threads[i] = new Thread(ts);
                 threads[i].Start();
-                threads[i].Join();
+                //threads[i].Join();
 
 
                 indexStarter += indexStarterStart;
