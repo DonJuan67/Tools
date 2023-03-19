@@ -8,7 +8,7 @@ namespace BankOfBitsAndBytes
 {
     class Program
     {
-        static readonly int passwordLength = 6; //Can you solve up to 6?
+        static readonly int passwordLength = 5; //Can you solve up to 6?
         static int robbedAmount = 0;
         static bool done = false;
 
@@ -37,14 +37,14 @@ namespace BankOfBitsAndBytes
 
             int z = 0;
             bool isStillAlive = true;
-            while (isStillAlive)
+            while (!done)
             {
-                isStillAlive = false;
-                for (int i = 0; i < threads.Length; i++)
-                {
-                    if (threads[i].IsAlive)
-                        isStillAlive = true;
-                }
+                //isStillAlive = false;
+                //for (int i = 0; i < threads.Length; i++)
+                //{
+                //    if (threads[i].IsAlive)
+                //        isStillAlive = true;
+                //}
             }
             sw.Stop();
             Console.WriteLine("TIME: " + sw.ElapsedMilliseconds);
