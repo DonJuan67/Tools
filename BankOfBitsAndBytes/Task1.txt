@@ -1,0 +1,16 @@
+Create a multi-threaded brute force program that attempts to guess the password and robs the bank.
+Everytime the bank is robbed, the password is reset.
+Keep robbing the bank until it runs out of money (returns -1).
+Output the time taken with a System.Diagnostics.Stopwatch
+Your brute force robber is allowed access to knowing the length of the password
+
+
+Your bank robber will be raced against others using the average value of 3 runs for passwords of lengths 1->6
+Start with smaller passwords of size 2~4. A password of size 6 if not fully optimized may take 20 minutes~several hours.
+
+
+Outputting the guess is useful just for debugging. It is an incredible expensive operation and will slow down
+your algo alot. In the final test it does not need to be active, but use it for testing.
+
+
+
