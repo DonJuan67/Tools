@@ -8,7 +8,7 @@ namespace BankOfBitsAndBytes
 {
     class Program
     {
-        static readonly int passwordLength = 5; //Can you solve up to 6?
+        static readonly int passwordLength = 6; //Can you solve up to 6?
         static int robbedAmount = 0;
         static bool done = false;
 
@@ -22,17 +22,27 @@ namespace BankOfBitsAndBytes
             BankOfBitsNBytes bbb = new BankOfBitsNBytes(passwordLength);
             int indexStarterStart = (BankOfBitsNBytes.acceptablePasswordChars.Length - 1) / nbThreads;
             int indexStarter = 0;
+            int indexEnder = 0;
             for (int i = 0; i < threads.Length; i++)
             {
                 int id = i;
-                ThreadStart ts = new ThreadStart(() => { GeneratePassword(BankOfBitsNBytes.acceptablePasswordChars[indexStarter], bbb, id); });
+                int tempStarterInd = indexStarter;
+                if (i == threads.Length - 1)
+                    indexEnder = BankOfBitsNBytes.acceptablePasswordChars.Length - 1;
+                else
+                    indexEnder += indexStarterStart;
+                int tempEnderInd = indexEnder;
+                //int tempStarterInd = indexStarter;
+                ThreadStart ts = new ThreadStart(() => { GeneratePassword(BankOfBitsNBytes.acceptablePasswordChars[tempStarterInd], BankOfBitsNBytes.acceptablePasswordChars[tempEnderInd], bbb, id); });
                 Thread t = new Thread(ts);
                 threads[i] = new Thread(ts);
                 threads[i].Start();
                 //threads[i].Join();
 
-
-                indexStarter += indexStarterStart;
+                if (i == 0)
+                    indexStarter += indexStarterStart + 1;
+                else
+                    indexStarter += indexStarterStart;
             }
 
             int z = 0;
@@ -63,7 +73,7 @@ namespace BankOfBitsAndBytes
             }
         }
 
-        static void GeneratePassword(char startingChar, BankOfBitsNBytes bbb, int id)
+        static void GeneratePassword(char startingChar, char endingChar, BankOfBitsNBytes bbb, int id)
         {
             char[] guess = new char[passwordLength];
             int forSecurity = 0;
@@ -126,8 +136,8 @@ namespace BankOfBitsAndBytes
                 ResetPasswordGenerator(guess);
 
 
-                if (c == GetTheLastChar())
-                    c = BankOfBitsNBytes.acceptablePasswordChars[0];
+                if (c == endingChar)
+                    c = startingChar;
                 else
                     c++;
                 if (forSecurity >= 500000)
